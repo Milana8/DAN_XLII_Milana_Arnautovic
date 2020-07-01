@@ -117,7 +117,7 @@ namespace Zadatak_1.ViewModel
             {
                 if (editEmployee == null)
                 {
-                    editEmployee = new RelayCommand(param => EditEmployeeExecute(), param => CanEditUserExecute());
+                    editEmployee = new RelayCommand(param => EditEmployeeExecute(), param => CanEditEmployeeExecute());
 
                 }
                 return editEmployee;
@@ -132,7 +132,7 @@ namespace Zadatak_1.ViewModel
                 
                 editEmployee.ShowDialog();
                 
-                if ((editEmployee.DataContext as EditEmployeeViewModel).IsUpdated == true)
+                if ((editEmployee.DataContext as EditEmployeeViewModel).IsUpdateEmployee == true)
                 {
                     
                     EmployeeList = service.GetAllEmployees();
@@ -173,7 +173,7 @@ namespace Zadatak_1.ViewModel
                 //opening new window
                 addEmployee.ShowDialog();
                 //checking for updates
-                if ((this.addEmployee.DataContext as AddEmployeeViewModel).IsUpdateEmployee == true)
+                if ((addEmployee.DataContext as AddEmployeeViewModel).IsUpdateEmployee == true)
                 {
                     //refresing list => including added user
                     EmployeeList = service.GetAllEmployees();

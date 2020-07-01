@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DAN_XLIIModelStoreContainer" CdmEntityContainer="DAN_XLIIEntities1">
+    <EntitySetMapping Name="tblEmployees">
+      <EntityTypeMapping TypeName="DAN_XLIIModel.tblEmployee">
+        <MappingFragment StoreEntitySet="tblEmployees">
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="Surname" ColumnName="Surname" />
+          <ScalarProperty Name="JMBG" ColumnName="JMBG" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+          <ScalarProperty Name="RegistrationNumber" ColumnName="RegistrationNumber" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="Manager" ColumnName="Manager" />
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="GenderID" ColumnName="GenderID" />
+          <ScalarProperty Name="SectorID" ColumnName="SectorID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblGenders">
+      <EntityTypeMapping TypeName="DAN_XLIIModel.tblGender">
+        <MappingFragment StoreEntitySet="tblGender">
+          <ScalarProperty Name="GenderID" ColumnName="GenderID" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblLocations">
+      <EntityTypeMapping TypeName="DAN_XLIIModel.tblLocation">
+        <MappingFragment StoreEntitySet="tblLocations">
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="Adress" ColumnName="Adress" />
+          <ScalarProperty Name="Place" ColumnName="Place" />
+          <ScalarProperty Name="States" ColumnName="States" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSectors">
+      <EntityTypeMapping TypeName="DAN_XLIIModel.tblSector">
+        <MappingFragment StoreEntitySet="tblSectors">
+          <ScalarProperty Name="SectorID" ColumnName="SectorID" />
+          <ScalarProperty Name="SectorName" ColumnName="SectorName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vwEmployees">
+      <EntityTypeMapping TypeName="DAN_XLIIModel.vwEmployee">
+        <MappingFragment StoreEntitySet="vwEmployees">
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="Surname" ColumnName="Surname" />
+          <ScalarProperty Name="JMBG" ColumnName="JMBG" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="Manager" ColumnName="Manager" />
+          <ScalarProperty Name="RegistrationNumber" ColumnName="RegistrationNumber" />
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="GenderID" ColumnName="GenderID" />
+          <ScalarProperty Name="SectorID" ColumnName="SectorID" />
+          <ScalarProperty Name="Expr1" ColumnName="Expr1" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Expr2" ColumnName="Expr2" />
+          <ScalarProperty Name="Adress" ColumnName="Adress" />
+          <ScalarProperty Name="States" ColumnName="States" />
+          <ScalarProperty Name="Place" ColumnName="Place" />
+          <ScalarProperty Name="Expr3" ColumnName="Expr3" />
+          <ScalarProperty Name="SectorName" ColumnName="SectorName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

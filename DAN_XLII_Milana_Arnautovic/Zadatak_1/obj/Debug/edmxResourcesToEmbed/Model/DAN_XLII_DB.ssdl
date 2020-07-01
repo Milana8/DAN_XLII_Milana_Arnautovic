@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DAN_XLIIModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="tblEmployees">
+    <Key>
+      <PropertyRef Name="EmployeeID" />
+    </Key>
+    <Property Name="EmployeeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Surname" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="JMBG" Type="nvarchar" MaxLength="13" Nullable="false" />
+    <Property Name="DateOfBirth" Type="date" Nullable="false" />
+    <Property Name="RegistrationNumber" Type="varchar" MaxLength="50" />
+    <Property Name="PhoneNumber" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Manager" Type="int" />
+    <Property Name="LocationID" Type="int" />
+    <Property Name="GenderID" Type="int" />
+    <Property Name="SectorID" Type="int" />
+  </EntityType>
+  <EntityType Name="tblGender">
+    <Key>
+      <PropertyRef Name="GenderID" />
+    </Key>
+    <Property Name="GenderID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Gender" Type="char" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblLocations">
+    <Key>
+      <PropertyRef Name="LocationID" />
+    </Key>
+    <Property Name="LocationID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Adress" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Place" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="States" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblSectors">
+    <Key>
+      <PropertyRef Name="SectorID" />
+    </Key>
+    <Property Name="SectorID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SectorName" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'DAN_XLII.dbo.vwEmployees' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vwEmployees">
+    <Key>
+      <PropertyRef Name="EmployeeID" />
+      <PropertyRef Name="FirstName" />
+      <PropertyRef Name="Surname" />
+      <PropertyRef Name="JMBG" />
+      <PropertyRef Name="DateOfBirth" />
+      <PropertyRef Name="PhoneNumber" />
+      <PropertyRef Name="Expr1" />
+      <PropertyRef Name="Gender" />
+      <PropertyRef Name="Expr2" />
+      <PropertyRef Name="Adress" />
+      <PropertyRef Name="States" />
+      <PropertyRef Name="Place" />
+      <PropertyRef Name="Expr3" />
+      <PropertyRef Name="SectorName" />
+    </Key>
+    <Property Name="EmployeeID" Type="int" Nullable="false" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Surname" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="JMBG" Type="nvarchar" MaxLength="13" Nullable="false" />
+    <Property Name="DateOfBirth" Type="date" Nullable="false" />
+    <Property Name="PhoneNumber" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Manager" Type="int" />
+    <Property Name="RegistrationNumber" Type="varchar" MaxLength="50" />
+    <Property Name="LocationID" Type="int" />
+    <Property Name="GenderID" Type="int" />
+    <Property Name="SectorID" Type="int" />
+    <Property Name="Expr1" Type="int" Nullable="false" />
+    <Property Name="Gender" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="Expr2" Type="int" Nullable="false" />
+    <Property Name="Adress" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="States" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Place" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Expr3" Type="int" Nullable="false" />
+    <Property Name="SectorName" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__tblEmploy__Gende__440B1D61">
+    <End Role="tblGender" Type="Self.tblGender" Multiplicity="0..1" />
+    <End Role="tblEmployees" Type="Self.tblEmployees" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblGender">
+        <PropertyRef Name="GenderID" />
+      </Principal>
+      <Dependent Role="tblEmployees">
+        <PropertyRef Name="GenderID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblEmploy__Locat__4316F928">
+    <End Role="tblLocations" Type="Self.tblLocations" Multiplicity="0..1" />
+    <End Role="tblEmployees" Type="Self.tblEmployees" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblLocations">
+        <PropertyRef Name="LocationID" />
+      </Principal>
+      <Dependent Role="tblEmployees">
+        <PropertyRef Name="LocationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblEmploy__Secto__44FF419A">
+    <End Role="tblSectors" Type="Self.tblSectors" Multiplicity="0..1" />
+    <End Role="tblEmployees" Type="Self.tblEmployees" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblSectors">
+        <PropertyRef Name="SectorID" />
+      </Principal>
+      <Dependent Role="tblEmployees">
+        <PropertyRef Name="SectorID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DAN_XLIIModelStoreContainer">
+    <EntitySet Name="tblEmployees" EntityType="Self.tblEmployees" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblGender" EntityType="Self.tblGender" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblLocations" EntityType="Self.tblLocations" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblSectors" EntityType="Self.tblSectors" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="vwEmployees" EntityType="Self.vwEmployees" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vwEmployees].[EmployeeID] AS [EmployeeID], 
+    [vwEmployees].[FirstName] AS [FirstName], 
+    [vwEmployees].[Surname] AS [Surname], 
+    [vwEmployees].[JMBG] AS [JMBG], 
+    [vwEmployees].[DateOfBirth] AS [DateOfBirth], 
+    [vwEmployees].[PhoneNumber] AS [PhoneNumber], 
+    [vwEmployees].[Manager] AS [Manager], 
+    [vwEmployees].[RegistrationNumber] AS [RegistrationNumber], 
+    [vwEmployees].[LocationID] AS [LocationID], 
+    [vwEmployees].[GenderID] AS [GenderID], 
+    [vwEmployees].[SectorID] AS [SectorID], 
+    [vwEmployees].[Expr1] AS [Expr1], 
+    [vwEmployees].[Gender] AS [Gender], 
+    [vwEmployees].[Expr2] AS [Expr2], 
+    [vwEmployees].[Adress] AS [Adress], 
+    [vwEmployees].[States] AS [States], 
+    [vwEmployees].[Place] AS [Place], 
+    [vwEmployees].[Expr3] AS [Expr3], 
+    [vwEmployees].[SectorName] AS [SectorName]
+    FROM [dbo].[vwEmployees] AS [vwEmployees]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK__tblEmploy__Gende__440B1D61" Association="Self.FK__tblEmploy__Gende__440B1D61">
+      <End Role="tblGender" EntitySet="tblGender" />
+      <End Role="tblEmployees" EntitySet="tblEmployees" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblEmploy__Locat__4316F928" Association="Self.FK__tblEmploy__Locat__4316F928">
+      <End Role="tblLocations" EntitySet="tblLocations" />
+      <End Role="tblEmployees" EntitySet="tblEmployees" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblEmploy__Secto__44FF419A" Association="Self.FK__tblEmploy__Secto__44FF419A">
+      <End Role="tblSectors" EntitySet="tblSectors" />
+      <End Role="tblEmployees" EntitySet="tblEmployees" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
