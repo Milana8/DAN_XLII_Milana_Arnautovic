@@ -14,9 +14,9 @@
           <Property Name="Surname" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="JMBG" Type="nvarchar" MaxLength="13" Nullable="false" />
           <Property Name="DateOfBirth" Type="date" Nullable="false" />
-          <Property Name="PhoneNumber" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="RegistrationNumber" Type="varchar" MaxLength="50" />
-          <Property Name="Manager" Type="nvarchar" MaxLength="50" />
+          <Property Name="PhoneNumber" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Manager" Type="int" />
           <Property Name="LocationID" Type="int" />
           <Property Name="GenderID" Type="int" />
           <Property Name="SectorID" Type="int" />
@@ -69,7 +69,7 @@ warning 6002: The table/view 'DAN_XLII.dbo.vwEmployees' does not have a primary 
           <Property Name="JMBG" Type="nvarchar" MaxLength="13" Nullable="false" />
           <Property Name="DateOfBirth" Type="date" Nullable="false" />
           <Property Name="PhoneNumber" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="Manager" Type="nvarchar" MaxLength="50" />
+          <Property Name="Manager" Type="int" />
           <Property Name="RegistrationNumber" Type="varchar" MaxLength="50" />
           <Property Name="LocationID" Type="int" />
           <Property Name="GenderID" Type="int" />
@@ -174,9 +174,9 @@ warning 6002: The table/view 'DAN_XLII.dbo.vwEmployees' does not have a primary 
           <Property Name="Surname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="JMBG" Type="String" MaxLength="13" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="DateOfBirth" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="PhoneNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="RegistrationNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Manager" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Manager" Type="Int32" />
           <Property Name="LocationID" Type="Int32" />
           <Property Name="GenderID" Type="Int32" />
           <Property Name="SectorID" Type="Int32" />
@@ -233,7 +233,7 @@ warning 6002: The table/view 'DAN_XLII.dbo.vwEmployees' does not have a primary 
           <Property Name="JMBG" Type="String" MaxLength="13" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="DateOfBirth" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="PhoneNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Manager" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Manager" Type="Int32" />
           <Property Name="RegistrationNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="LocationID" Type="Int32" />
           <Property Name="GenderID" Type="Int32" />
@@ -283,7 +283,7 @@ warning 6002: The table/view 'DAN_XLII.dbo.vwEmployees' does not have a primary 
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="DAN_XLIIEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="DAN_XLIIEntities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="tblEmployees" EntityType="Self.tblEmployee" />
           <EntitySet Name="tblGenders" EntityType="Self.tblGender" />
           <EntitySet Name="tblLocations" EntityType="Self.tblLocation" />
@@ -307,7 +307,7 @@ warning 6002: The table/view 'DAN_XLII.dbo.vwEmployees' does not have a primary 
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="DAN_XLIIModelStoreContainer" CdmEntityContainer="DAN_XLIIEntities">
+        <EntityContainerMapping StorageEntityContainer="DAN_XLIIModelStoreContainer" CdmEntityContainer="DAN_XLIIEntities1">
           <EntitySetMapping Name="tblEmployees">
             <EntityTypeMapping TypeName="DAN_XLIIModel.tblEmployee">
               <MappingFragment StoreEntitySet="tblEmployees">
@@ -316,8 +316,8 @@ warning 6002: The table/view 'DAN_XLII.dbo.vwEmployees' does not have a primary 
                 <ScalarProperty Name="Surname" ColumnName="Surname" />
                 <ScalarProperty Name="JMBG" ColumnName="JMBG" />
                 <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
-                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
                 <ScalarProperty Name="RegistrationNumber" ColumnName="RegistrationNumber" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
                 <ScalarProperty Name="Manager" ColumnName="Manager" />
                 <ScalarProperty Name="LocationID" ColumnName="LocationID" />
                 <ScalarProperty Name="GenderID" ColumnName="GenderID" />

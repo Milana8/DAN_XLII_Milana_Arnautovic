@@ -64,6 +64,49 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Commands\RelayCommand.cs" />
+    <Compile Include="Model\DAN_XLII_DB.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DAN_XLII_DB.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\DAN_XLII_DB.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DAN_XLII_DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\DAN_XLII_DB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DAN_XLII_DB.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Model\tblEmployee.cs">
+      <DependentUpon>DAN_XLII_DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\tblGender.cs">
+      <DependentUpon>DAN_XLII_DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\tblLocation.cs">
+      <DependentUpon>DAN_XLII_DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\tblSector.cs">
+      <DependentUpon>DAN_XLII_DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Service.cs" />
+    <Compile Include="Validation.cs" />
+    <Compile Include="ViewModel\AddEmployeeViewModel.cs" />
+    <Compile Include="ViewModel\EditEmployeeViewModel.cs" />
+    <Compile Include="ViewModel\MainWindowViewModel.cs" />
+    <Compile Include="ViewModel\ViewModelBase.cs" />
+    <Compile Include="Model\vwEmployee.cs">
+      <DependentUpon>DAN_XLII_DB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="View\AddEmployee.xaml.cs">
+      <DependentUpon>AddEmployee.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\EditEmployee.xaml.cs">
+      <DependentUpon>EditEmployee.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -72,20 +115,18 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="DAN_XLII_DB.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DAN_XLII_DB.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DAN_XLII_DB.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DAN_XLII_DB.edmx</DependentUpon>
-    </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="View\AddEmployee.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\EditEmployee.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -105,11 +146,11 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EntityDeploy Include="DAN_XLII_DB.edmx">
+    <EntityDeploy Include="Model\DAN_XLII_DB.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>DAN_XLII_DB.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="DAN_XLII_DB.edmx.diagram">
+    <None Include="Model\DAN_XLII_DB.edmx.diagram">
       <DependentUpon>DAN_XLII_DB.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
@@ -122,13 +163,20 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="DAN_XLII_DB.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>DAN_XLII_DB.Context.cs</LastGenOutput>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Model\DAN_XLII_DB.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DAN_XLII_DB.edmx</DependentUpon>
+      <LastGenOutput>DAN_XLII_DB.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model\DAN_XLII_DB.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DAN_XLII_DB.edmx</DependentUpon>
+      <LastGenOutput>DAN_XLII_DB.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

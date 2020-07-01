@@ -13,10 +13,10 @@ namespace Zadatak_1.Model
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class DAN_XLIIEntities : DbContext
+    public partial class DAN_XLIIEntities1 : DbContext
     {
-        public DAN_XLIIEntities()
-            : base("name=DAN_XLIIEntities")
+        public DAN_XLIIEntities1()
+            : base("name=DAN_XLIIEntities1")
         {
         }
     

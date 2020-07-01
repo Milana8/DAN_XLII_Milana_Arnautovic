@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,21 +10,20 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Zadatak_1.Model;
 
-namespace Zadatak_1
+namespace Zadatak_1.View
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for EditEmployee.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class EditEmployee : Window
     {
-        public MainWindow()
+        public EditEmployee()
         {
             InitializeComponent();
-            this.DataContext = new MainWindowViewModel(this);
-            DataGridEmployees.Items.SortDescriptions.Add(new SortDescription("Surname", ListSortDirection.Ascending));
+            this.DataContext = new EmployeeViewModel(this, vwEmployee);
         }
     }
 }
